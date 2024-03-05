@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vibrate Example</title>
+</head>
+<body>
+<button onclick="vibrateTwice()">Vibrate Twice</button>
+
+<script>
 function vibrateTwice() {
     // Check if the vibration API is supported
     if ('vibrate' in navigator) {
@@ -7,6 +18,6 @@ function vibrateTwice() {
         console.log('Vibration API not supported');
     }
 }
-
-// Call the function to vibrate the device twice
-vibrateTwice();
+</script>
+</body>
+</html>
