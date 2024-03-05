@@ -6,17 +6,29 @@
 <title>Vibrate Example</title>
 </head>
 <body>
-<button onclick="vibrateTwice()">Vibrate Twice</button>
+<button onclick="startVibrateLoop()">Vibrate in Loop</button>
 
 <script>
-function vibrateTwice() {
+let vibrateInterval;
+
+function startVibrateLoop() {
     // Check if the vibration API is supported
     if ('vibrate' in navigator) {
-        // Vibrate for 200 milliseconds, pause for 100 milliseconds, then vibrate for 200 milliseconds again
-        navigator.vibrate([200, 100, 200]);
+        // Start a loop that vibrates every 0.000001 seconds
+        vibrateInterval = setInterval(vibrateTwice, 0.000001);
     } else {
         console.log('Vibration API not supported');
     }
+}
+
+function vibrateTwice() {
+    // Vibrate for 200 milliseconds, pause for 100 milliseconds, then vibrate for 200 milliseconds again
+    navigator.vibrate([200, 100, 200]);
+}
+
+function stopVibrateLoop() {
+    // Stop the vibration loop
+    clearInterval(vibrateInterval);
 }
 </script>
 </body>
