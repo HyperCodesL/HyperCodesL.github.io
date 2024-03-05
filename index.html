@@ -3,32 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vibrate Example</title>
+<title>Strongest Vibration</title>
 </head>
 <body>
-<button onclick="startVibrateLoop()">Vibrate in Loop</button>
+<button onclick="vibrateStrongest()">Vibrate Strongest</button>
 
 <script>
-let vibrateInterval;
-
-function startVibrateLoop() {
+function vibrateStrongest() {
     // Check if the vibration API is supported
     if ('vibrate' in navigator) {
-        // Start a loop that vibrates every 0.000001 seconds
-        vibrateInterval = setInterval(vibrateTwice, 0.000001);
+        // Vibrate with a pattern of 1000 milliseconds (1 second)
+        navigator.vibrate(1000);
     } else {
         console.log('Vibration API not supported');
     }
-}
-
-function vibrateTwice() {
-    // Vibrate for 200 milliseconds, pause for 100 milliseconds, then vibrate for 200 milliseconds again
-    navigator.vibrate([200, 100, 200]);
-}
-
-function stopVibrateLoop() {
-    // Stop the vibration loop
-    clearInterval(vibrateInterval);
 }
 </script>
 </body>
