@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flashlight</title>
+</head>
+<body>
+  <button onclick="toggleFlashlight()">Turn On Flashlight</button>
+
+  <script>
+    function toggleFlashlight() {
+      if ('torch' in navigator) {
+        navigator.torch.toggle();
+      } else {
+        alert('Flashlight not supported on this device.');
+      }
+    }
+  </script>
+</body>
+</html>
+
