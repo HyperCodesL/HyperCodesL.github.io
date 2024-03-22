@@ -1,23 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Strongest Vibration</title>
+  <title>Flashlight</title>
 </head>
 <body>
-<button onclick="vibrateStrongest()">Vibrate Strongest</button>
+  <button onclick="toggleFlashlight()">Turn On Flashlight</button>
 
-<script>
-function vibrateStrongest() {
-    // Check if the vibration API is supported
-    if ('vibrate' in navigator) {
-        // Vibrate with a pattern of 1000 milliseconds (1 second)
-        navigator.vibrate(100000);
-    } else {
-        console.log('Vibration API not supported');
+  <script>
+    function toggleFlashlight() {
+      if ('torch' in navigator) {
+        navigator.torch.toggle();
+      } else {
+        alert('Flashlight not supported on this device.');
+      }
     }
-}
-</script>
+  </script>
 </body>
 </html>
